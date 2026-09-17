@@ -1,27 +1,20 @@
-# NOVA-Offline-AI-Desktop-Companion
-An emotion-aware offline AI desktop companion powered by Raspberry Pi, Ollama, and Llama 3.2.
-# NOVA — Offline AI Desktop Companion
-
-NOVA is a Raspberry Pi-based AI desktop companion designed to combine
-local conversational AI with memory, emotions, personality, computer
-vision, voice interaction, touch input, and an expressive OLED face.
-
-The project uses a Raspberry Pi as the embedded interaction system and
-Ollama with Llama 3.2 on a Windows laptop for local language-model
-inference.
-
----
+# NOVA Interaction System
 
 ## Overview
 
-Traditional voice assistants mainly focus on answering commands.
+NOVA is designed as a multimodal desktop companion. It combines voice,
+vision, touch, conversational AI, memory, emotion, and an expressive
+OLED interface.
 
-NOVA is designed as an interactive desktop companion that combines
-conversation with visual expressions, memory, emotional behavior, and
-multiple interaction channels.
+The interaction system connects these different input and output
+channels into a single companion experience.
+
+---
+
+## Interaction Architecture
 
 ```text
-                         NOVA
+                         USER
                            │
           ┌────────────────┼────────────────┐
           │                │                │
@@ -32,19 +25,24 @@ multiple interaction channels.
           │                │                │
           └────────────────┼────────────────┘
                            ▼
-                    Raspberry Pi
+                    NOVA Input Layer
                            │
                            ▼
-                   Conversation System
+                   Conversation Logic
                            │
                            ▼
-                  Ollama + Llama 3.2
+                   Ollama + Llama 3.2
                            │
                            ▼
-                 Emotion + Memory
+                    AI Response
                            │
+              ┌────────────┼────────────┐
+              ▼            ▼            ▼
+           Memory       Emotion     Personality
+              │            │            │
+              └────────────┼────────────┘
                            ▼
-                    NOVA Behavior
+                     NOVA Behavior
                            │
                 ┌──────────┴──────────┐
                 ▼                     ▼
